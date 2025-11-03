@@ -1,0 +1,138 @@
+/* ---- Base Section ---- */
+.lamp-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.5s ease;
+  overflow: hidden;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Lamp ON/OFF background */
+.lamp-section.off {
+  background: linear-gradient(90deg, #0a0a0a, #101010);
+}
+
+.lamp-section.on {
+  background: radial-gradient(circle at center, rgba(255, 222, 133, 0.3), #22386b);
+}
+
+/* ---- Lamp Icon ---- */
+.lamp {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bulb {
+  font-size: 70px;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.bulb.glow {
+  color: #f0a327;
+  filter: drop-shadow(0 0 25px #f0a327);
+  transform: scale(1.1);
+}
+
+.hint {
+  color: #ccc;
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+/* ---- Signup Card ---- */
+.signup-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  padding: 40px 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  perspective: 1000px;
+}
+
+/* 3D Hover Effect */
+.signup-card:hover {
+  transform: rotateY(8deg) rotateX(5deg) scale(1.03);
+  box-shadow: 0 15px 40px rgba(240, 163, 39, 0.4);
+}
+
+/* Heading */
+.signup-card h2 {
+  font-size: 2rem;
+  color: #fff;
+  margin-bottom: 25px;
+  text-shadow: 0 0 10px rgba(240, 163, 39, 0.6);
+}
+
+/* Inputs */
+.signup-card input {
+  display: block;
+  width: 280px;
+  margin: 10px auto;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.signup-card input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 10px #f0a327;
+}
+
+/* Button */
+.signup-card button {
+  margin-top: 15px;
+  padding: 12px 20px;
+  width: 100%;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #f0a327, #ffcc5e);
+  color: #222;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.signup-card button:hover {
+  background: linear-gradient(90deg, #ffcc5e, #f0a327);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(240, 163, 39, 0.6);
+}
+
+/* ---- Animation ---- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .signup-card {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .signup-card input {
+    width: 100%;
+  }
+}
