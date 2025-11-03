@@ -1,6 +1,6 @@
 /* ---- Base Section ---- */
 .lamp-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,6 +8,8 @@
   transition: background 0.5s ease;
   overflow: hidden;
   font-family: "Poppins", sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 /* Lamp ON/OFF background */
@@ -22,7 +24,7 @@
 /* ---- Lamp Icon ---- */
 .lamp {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .bulb {
@@ -42,6 +44,7 @@
   color: #ccc;
   font-size: 0.9rem;
   margin-top: 8px;
+  text-align: center;
 }
 
 /* ---- Signup Card ---- */
@@ -56,6 +59,8 @@
   animation: fadeIn 1s ease forwards;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   perspective: 1000px;
+  width: 400px;
+  max-width: 90vw;
 }
 
 /* 3D Hover Effect */
@@ -75,8 +80,8 @@
 /* Inputs */
 .signup-card input {
   display: block;
-  width: 280px;
-  margin: 10px auto;
+  width: 100%;
+  margin: 10px 0;
   padding: 12px 15px;
   border: none;
   border-radius: 8px;
@@ -85,6 +90,7 @@
   color: #fff;
   font-size: 1rem;
   transition: all 0.3s ease;
+  box-sizing: border-box;
 }
 
 .signup-card input:focus {
@@ -125,14 +131,56 @@
   }
 }
 
-/* Responsive */
-@media (max-width: 480px) {
+/* ---- Responsive Design ---- */
+
+/* Tablets (≤ 768px) */
+@media (max-width: 768px) {
+  .bulb {
+    font-size: 60px;
+  }
+
   .signup-card {
-    width: 90%;
-    padding: 25px;
+    width: 85%;
+    padding: 35px 40px;
+  }
+
+  .signup-card h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .lamp-section {
+    padding: 15px;
+  }
+
+  .bulb {
+    font-size: 55px;
+  }
+
+  .hint {
+    font-size: 0.8rem;
+  }
+
+  .signup-card {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  .signup-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 18px;
   }
 
   .signup-card input {
-    width: 100%;
+    font-size: 0.9rem;
+    padding: 10px 12px;
+  }
+
+  .signup-card button {
+    font-size: 0.95rem;
+    padding: 10px 15px;
   }
 }
